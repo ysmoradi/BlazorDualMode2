@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Components.Routing;
+@using BlazorDualMode2;
+@using BlazorDualMode2.Shared;
+@using BlazorDualMode2.Pages;
+@using System.Reflection;
+
+<Router AppAssembly="@GetType().Assembly" AdditionalAssemblies="@(new []{ Assembly.Load("BlazorDualMode2") })">
+	<Found Context="routeData">
+		<RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+	</Found>
+	<NotFound>
+		<LayoutView Layout="@typeof(MainLayout)">
+			<p>Sorry, there's nothing at this address.</p>
+		</LayoutView>
+	</NotFound>
+</Router>
