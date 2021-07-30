@@ -6,6 +6,8 @@ using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Controls.Xaml;
 using Microsoft.Maui.Hosting;
 
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
+
 namespace BlazorDualMode2.Hybrid
 {
     public class Startup : IStartup
