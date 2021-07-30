@@ -2,11 +2,12 @@ namespace BlazorDualMode2.Shared
 {
     public partial class NavMenu
     {
-        private bool collapseNavMenu = true;
-        private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-        private void ToggleNavMenu()
+        public bool CollapseNavMenu { get; set; } = true;
+        public string NavMenuCssClass => CollapseNavMenu ? "collapse" : null;
+
+        public void ToggleNavMenu()
         {
-            collapseNavMenu = !collapseNavMenu;
+            CollapseNavMenu = !CollapseNavMenu;
         }
     }
 }

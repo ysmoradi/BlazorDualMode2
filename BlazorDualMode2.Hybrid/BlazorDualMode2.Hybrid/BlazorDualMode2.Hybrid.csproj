@@ -16,7 +16,9 @@
 		<ApplicationVersion>1.0</ApplicationVersion>
 		<AndroidVersionCode>1</AndroidVersionCode>
 
-		<UseInterpreter Condition="'$(TargetFramework)' == 'net6.0-android'">True</UseInterpreter>
+		<UseMaui>true</UseMaui>
+
+		<UseInterpreter>False</UseInterpreter>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -33,17 +35,15 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebView.Maui" Version="6.0.100-preview.4.*" />
-		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.0-preview.6.21275.8" />
-		<PackageReference Include="Microsoft.Maui" Version="6.0.100-preview.4.*" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="6.0.0-preview.6.21355.2" />
 	</ItemGroup>
-	
+
 	<ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
-		<AndroidEnvironment Include="Android\AndroidEnvironment.txt" />
+		<AndroidEnvironment Include="Platforms\Android\AndroidEnvironment.txt" />
 	</ItemGroup>
-	
+
 	<ItemGroup>
-	  <ProjectReference Include="..\..\BlazorDualMode2\BlazorDualMode2.csproj" />
+		<ProjectReference Include="..\..\BlazorDualMode2\BlazorDualMode2.csproj" />
 	</ItemGroup>
 
 </Project>

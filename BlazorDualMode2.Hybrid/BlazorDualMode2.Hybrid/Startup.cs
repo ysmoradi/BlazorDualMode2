@@ -2,11 +2,9 @@
 using Microsoft.AspNetCore.Components.WebView.Maui;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
-using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Controls.Xaml;
 using Microsoft.Maui.Hosting;
-
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 
 namespace BlazorDualMode2.Hybrid
 {
@@ -15,7 +13,6 @@ namespace BlazorDualMode2.Hybrid
         public void Configure(IAppHostBuilder appBuilder)
         {
             appBuilder
-                .UseFormsCompatibility()
                 .RegisterBlazorMauiWebView(typeof(Startup).Assembly)
                 .UseMicrosoftExtensionsServiceProviderFactory()
                 .UseMauiApp<App>()
